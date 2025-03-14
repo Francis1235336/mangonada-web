@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Mangonada F&A</title>
+        <link rel="icon" href="logo-mangonada.png" type="image/png">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            /* Estilo para hacer el encabezado fijo */
+            header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 1000;
+            }
+    
+            /* Para asegurar que el contenido no quede cubierto por el encabezado fijo */
+            body {
+                padding-top: 120px; /* Ajusta este valor si es necesario */
+            }
+        </style>
+    </head>
+    
+    <body class="bg-yellow-50 font-sans">
+    
+        <!-- Header con logo al lado -->
+        <header class="flex items-center justify-center gap-4 p-6 bg-yellow-400">
+            <img src="logo-mangonada.png" alt="Logo Mangonada F&A" class="w-16 h-16 rounded-full">
+            <div>
+                <h1 class="text-4xl font-bold">Mangonada F&A</h1>
+                <p class="text-lg">¡Las mejores mangonadas en tu ciudad!</p>
+            </div>
+        </header>
+
+        <!-- Productos -->
+        <section class="p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Producto 1 -->
+            <div class="bg-white rounded-xl shadow p-4 text-center">
+                <img src="SUPER.jpg" class="mx-auto rounded-lg mb-4">
+                <h3 class="text-xl font-bold">Super Mangonada</h3>
+                <p class="text-lg text-gray-600">$425</p>
+                <input type="number" id="quantity-super" class="w-16 p-2 border rounded" min="1" value="1">
+                <button onclick="addToCart('Super Mangonada', 425, document.getElementById('quantity-super').value)" class="mt-2 bg-green-500 text-white px-4 py-2 rounded">Agregar al carrito</button>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="bg-white rounded-xl shadow p-4 text-center">
+                <img src="picafresa.jpg" class="mx-auto rounded-lg mb-4">
+                <h3 class="text-xl font-bold">PicaFresa</h3>
+                <p class="text-lg text-gray-600">$400</p>
+                <input type="number" id="quantity-picafresa" class="w-16 p-2 border rounded" min="1" value="1">
+                <button onclick="addToCart('PicaFresa', 400, document.getElementById('quantity-picafresa').value)" class="mt-2 bg-green-500 text-white px-4 py-2 rounded">Agregar al carrito</button>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="bg-white rounded-xl shadow p-4 text-center">
+                <img src="mangonada normal.jpg" class="mx-auto rounded-lg mb-4">
+                <h3 class="text-xl font-bold">Mangonada Especial</h3>
+                <p class="text-lg text-gray-600">$375</p>
+                <input type="number" id="quantity-normal" class="w-16 p-2 border rounded" min="1" value="1">
+                <button onclick="addToCart('Mangonada Especial', 375, document.getElementById('quantity-normal').value)" class="mt-2 bg-green-500 text-white px-4 py-2 rounded">Agregar al carrito</button>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="bg-white rounded-xl shadow p-4 text-center">
+                <img src="mango1.jpg" class="mx-auto rounded-lg mb-4">
+                <h3 class="text-xl font-bold">Mango Enchilado</h3>
+                <p class="text-lg text-gray-600">$250</p>
+                <input type="number" id="quantity-Mango Enchilado" class="w-16 p-2 border rounded" min="1" value="1">
+                <button onclick="addToCart('Mango Enchilado', 250, document.getElementById('quantity-Mango Enchilado').value)" class="mt-2 bg-green-500 text-white px-4 py-2 rounded">Agregar al carrito</button>
+            </div>
+  
+            <!-- Producto 5 -->
+            <div class="bg-white rounded-xl shadow p-4 text-center">
+                <img src="Limoncillo.jpg" class="mx-auto rounded-lg mb-4">
+                <h3 class="text-xl font-bold">Limoncillos Enchilado</h3>
+                <p class="text-lg text-gray-600">$150</p>
+                <input type="number" id="quantity-Limoncillos Enchilado" class="w-16 p-2 border rounded" min="1" value="1">
+                <button onclick="addToCart('Limoncillos Enchilado', 150, document.getElementById('quantity-Limoncillos Enchilado').value)" class="mt-2 bg-green-500 text-white px-4 py-2 rounded">Agregar al carrito</button>
+            </div>
+  
+            <!-- Producto 6 -->
+            <div class="bg-white rounded-xl shadow p-4 text-center">
+                <img src="Manzana de oro.jpg" class="mx-auto rounded-lg mb-4">
+                <h3 class="text-xl font-bold">Manzana de oros</h3>
+                <p class="text-lg text-gray-600">$250</p>
+                <input type="number" id="quantity-Manzana de oros" class="w-16 p-2 border rounded" min="1" value="1">
+                <button onclick="addToCart('Manzana de oros', 250, document.getElementById('quantity-Manzana de oros').value)" class="mt-2 bg-green-500 text-white px-4 py-2 rounded">Agregar al carrito</button>
+            </div>
+  
+            <!-- Producto 7 -->
+            <div class="bg-white rounded-xl shadow p-4 text-center">
+                <img src="piña.jpg" class="mx-auto rounded-lg mb-4">
+                <h3 class="text-xl font-bold">Piña Enchilada</h3>
+                <p class="text-lg text-gray-600">$200</p>
+                <input type="number" id="quantity-Piña Enchilada" class="w-16 p-2 border rounded" min="1" value="1">
+                <button onclick="addToCart('Piña Enchilada', 200, document.getElementById('quantity-Piña Enchilada').value)" class="mt-2 bg-green-500 text-white px-4 py-2 rounded">Agregar al carrito</button>
+            </div>
+
+            <!-- Producto 8 -->
+            <div class="bg-white rounded-xl shadow p-4 text-center">
+                <img src="SUPER.jpg" class="mx-auto rounded-lg mb-4">
+                <h3 class="text-xl font-bold">Helados</h3>
+                <p class="text-lg text-gray-600">$50</p>
+                <input type="number" id="quantity-Helados" class="w-16 p-2 border rounded" min="1" value="1">
+                <button onclick="addToCart('Helados', 50, document.getElementById('quantity-Helados').value)" class="mt-2 bg-green-500 text-white px-4 py-2 rounded">Agregar al carrito</button>
+            </div>
+  
+            <!-- Producto 9 -->
+            <div class="bg-white rounded-xl shadow p-4 text-center">
+                <img src="turron.jpg" class="mx-auto rounded-lg mb-4">
+                <h3 class="text-xl font-bold">Turron</h3>
+                <p class="text-lg text-gray-600">75</p>
+                <input type="number" id="quantity-Turron" class="w-16 p-2 border rounded" min="1" value="1">
+                <button onclick="addToCart('Turron',75, document.getElementById('quantity-Turron').value)" class="mt-2 bg-green-500 text-white px-4 py-2 rounded">Agregar al carrito</button>
+            </div>
+  
+        </section>
+
+        <!-- Botón flotante carrito -->
+        <button onclick="toggleCart()" id="cart-toggle-btn" class="fixed bottom-4 right-4 bg-yellow-400 text-white p-4 rounded-full shadow-lg z-50">
+            🛒
+        </button>
+
+        <!-- Resumen del carrito flotante -->
+        <section id="cart-summary" class="p-4 bg-white shadow-lg fixed bottom-24 right-4 w-80 rounded-xl border-2 border-yellow-400 hidden z-40">
+            <h3 class="text-2xl font-bold mb-2">🛒 Tu Pedido</h3>
+            <ul id="cart-items" class="mb-2 max-h-40 overflow-y-auto"></ul>
+            <p id="cart-total" class="font-bold text-lg">Total: $0.00</p>
+            
+            <!-- Botón para enviar al primer número -->
+            <button id="whatsapp-link-1" onclick="sendOrder('18098794247')" class="block mt-4 bg-green-600 text-white py-3 rounded-xl w-full flex items-center justify-center gap-2">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="w-6 h-6"> Enviar a Personal 1
+            </button>
+            
+            <!-- Botón para enviar al segundo número -->
+            <button id="whatsapp-link-2" onclick="sendOrder('18296948722')" class="block mt-4 bg-green-600 text-white py-3 rounded-xl w-full flex items-center justify-center gap-2">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="w-6 h-6"> Enviar a Personal 2
+            </button>
+
+            <!-- Botón para mostrar el modal de pago bancario -->
+            <button onclick="showPaymentDetails()" class="mt-4 bg-blue-500 text-white py-3 rounded-xl w-full">Pagar por Transferencia Bancaria</button>
+        </section>
+
+        <!-- Modal de pago bancario -->
+        <div id="bank-payment-modal" class="hidden fixed inset-0 bg-gray-500 bg-opacity-50 flex justify-center items-center z-50">
+            <div class="bg-white p-6 rounded-lg shadow-xl">
+                <h3 class="text-2xl font-bold mb-2">Detalles de Pago Bancario</h3>
+                <p class="text-lg">Por favor, realiza la transferencia a los siguientes datos:</p>
+                <p><strong>Banco Banreservas: </strong>9605648155</p>
+                <p><strong>Banco Scotiabank: </strong>63500010005</p>
+                <p><strong>Referencia: </strong>Francis Johan Rodriguez Brito</p>
+                <p><strong>Valor: </strong>$<span id="total-payment">0.00</span></p>
+                <button class="bg-red-500 text-white py-2 px-4 rounded" onclick="closePaymentModal()">Cerrar</button>
+            </div>
+        </div>
+
+        <script>
+            let cart = [];
+    
+            function addToCart(name, price, quantity) {
+                quantity = parseInt(quantity);
+                const existing = cart.find(item => item.name === name);
+                if (existing) {
+                    existing.quantity += quantity;
+                    existing.totalPrice = existing.quantity * existing.price;
+                } else {
+                    cart.push({ name, price, quantity, totalPrice: price * quantity });
+                }
+                alert(`✅ "${name}" x${quantity} agregado al carrito.`);
+                updateCart();
+            }
+    
+            function updateCart() {
+                const items = document.getElementById('cart-items');
+                const total = document.getElementById('cart-total');
+                items.innerHTML = '';
+                let sum = 0;
+    
+                cart.forEach((item, index) => {
+                    const li = document.createElement('li');
+                    li.classList.add('flex', 'justify-between', 'items-center', 'mb-2');
+                    li.innerHTML = `${item.name} x${item.quantity} - $${item.totalPrice.toFixed(2)} <button onclick="removeItemFromCart(${index})" class="bg-red-500 text-white rounded-full px-2 py-1">❌</button>`;
+                    items.appendChild(li);
+                    sum += item.totalPrice;
+                });
+    
+                const delivery = 100;
+                const totalWithDelivery = sum + delivery;
+                items.innerHTML += `<li class="flex justify-between font-semibold">🚚 Delivery: <span>$${delivery.toFixed(2)}</span></li>`;
+                total.textContent = `Total con Delivery: $${totalWithDelivery.toFixed(2)}`;
+                document.getElementById('total-payment').textContent = totalWithDelivery.toFixed(2);
+            }
+    
+            function removeItemFromCart(index) {
+                cart.splice(index, 1);
+                updateCart();
+            }
+    
+            function toggleCart() {
+                document.getElementById('cart-summary').classList.toggle('hidden');
+            }
+    
+            function showPaymentDetails() {
+                document.getElementById('bank-payment-modal').classList.remove('hidden');
+            }
+    
+            function closePaymentModal() {
+                document.getElementById('bank-payment-modal').classList.add('hidden');
+            }
+    
+            function sendOrder(phone) {
+                const details = cart.map(item => `${item.name} x${item.quantity} - $${item.totalPrice.toFixed(2)}`).join('%0A');
+                const total = cart.reduce((acc, item) => acc + item.totalPrice, 0) + 100; // Incluye delivery
+                const message = `Hola! Quiero ordenar:%0A${details}%0A🚚 Delivery: $100.00%0ATotal: $${total.toFixed(2)}`;
+                window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+            }
+        </script>
+    
+    </body>
+</html>
+
