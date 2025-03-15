@@ -1,0 +1,13 @@
+/* Estilo para hacer el encabezado fijo */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Para asegurar que el contenido no quede cubierto por el encabezado fijo */
+body {
+    padding-top: 120px; /* Ajusta este valor según el alto del header */
+}
